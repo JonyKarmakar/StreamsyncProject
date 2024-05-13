@@ -1,0 +1,423 @@
+{
+    "metadata": {
+        "streamsync_version": "0.2.8"
+    },
+    "components": {
+        "root": {
+            "id": "root",
+            "type": "root",
+            "content": {
+                "appName": "My App"
+            },
+            "parentId": null,
+            "position": 0,
+            "handlers": {},
+            "visible": true
+        },
+        "c0f99a9e-5004-4e75-a6c6-36f17490b134": {
+            "id": "c0f99a9e-5004-4e75-a6c6-36f17490b134",
+            "type": "page",
+            "content": {
+                "pageMode": "compact",
+                "emptinessColor": "#e9eef1",
+                "key": "Page 1"
+            },
+            "parentId": "root",
+            "position": 0,
+            "handlers": {},
+            "visible": true
+        },
+        "bebc5fe9-63a7-46a7-b0fa-62303555cfaf": {
+            "id": "bebc5fe9-63a7-46a7-b0fa-62303555cfaf",
+            "type": "header",
+            "content": {
+                "text": "@{my_app.title}"
+            },
+            "parentId": "c0f99a9e-5004-4e75-a6c6-36f17490b134",
+            "position": 0,
+            "handlers": {},
+            "visible": true
+        },
+        "28d3885b-0fb8-4d41-97c6-978540015431": {
+            "id": "28d3885b-0fb8-4d41-97c6-978540015431",
+            "type": "section",
+            "content": {
+                "title": "",
+                "snapMode": "no",
+                "containerShadow": "0px 4px 11px -12px #000000"
+            },
+            "parentId": "c0f99a9e-5004-4e75-a6c6-36f17490b134",
+            "position": 1,
+            "handlers": {},
+            "visible": true
+        },
+        "d4a5e62c-c6fe-49c4-80d4-33862af8727d": {
+            "id": "d4a5e62c-c6fe-49c4-80d4-33862af8727d",
+            "type": "columns",
+            "content": {},
+            "parentId": "28d3885b-0fb8-4d41-97c6-978540015431",
+            "position": 0,
+            "handlers": {},
+            "visible": true
+        },
+        "c2519671-9ce7-44e7-ba4e-b0efda9cb20e": {
+            "id": "c2519671-9ce7-44e7-ba4e-b0efda9cb20e",
+            "type": "column",
+            "content": {
+                "width": "1"
+            },
+            "parentId": "d4a5e62c-c6fe-49c4-80d4-33862af8727d",
+            "position": 1,
+            "handlers": {},
+            "visible": true
+        },
+        "d4a71819-7444-4083-a1c7-7995452a7abf": {
+            "id": "d4a71819-7444-4083-a1c7-7995452a7abf",
+            "type": "separator",
+            "content": {},
+            "parentId": "d4a5e62c-c6fe-49c4-80d4-33862af8727d",
+            "position": 0,
+            "handlers": {},
+            "visible": true
+        },
+        "503p5z8j1lg167zr": {
+            "id": "503p5z8j1lg167zr",
+            "type": "sliderinput",
+            "content": {
+                "label": "Year Slider",
+                "minValue": "2000",
+                "maxValue": "2023",
+                "stepSize": "1"
+            },
+            "parentId": "c2519671-9ce7-44e7-ba4e-b0efda9cb20e",
+            "position": 0,
+            "handlers": {
+                "ss-number-change": "slider_handle"
+            },
+            "binding": {
+                "eventType": "ss-number-change",
+                "stateRef": "year"
+            },
+            "visible": true
+        },
+        "giintj02dq5ugwxn": {
+            "id": "giintj02dq5ugwxn",
+            "type": "plotlygraph",
+            "content": {
+                "spec": "@{plotly_localities}"
+            },
+            "parentId": "c2519671-9ce7-44e7-ba4e-b0efda9cb20e",
+            "position": 1,
+            "handlers": {
+                "plotly-click": "handle_click"
+            },
+            "visible": true
+        },
+        "wwtecv8maslbkmdl": {
+            "id": "wwtecv8maslbkmdl",
+            "type": "button",
+            "content": {
+                "text": "Page 2"
+            },
+            "parentId": "bebc5fe9-63a7-46a7-b0fa-62303555cfaf",
+            "position": 0,
+            "handlers": {
+                "ss-click": "$goToPage_Page 2"
+            },
+            "visible": true
+        },
+        "qf0j8kb30y5bkn06": {
+            "id": "qf0j8kb30y5bkn06",
+            "type": "page",
+            "content": {
+                "key": "Page 2"
+            },
+            "parentId": "root",
+            "position": 1,
+            "handlers": {
+                "ss-keydown": "$goToPage_Page 3"
+            },
+            "visible": true
+        },
+        "hrgasspvp41lpncf": {
+            "id": "hrgasspvp41lpncf",
+            "type": "plotlygraph",
+            "content": {
+                "spec": "@{plotly_pie_chart}"
+            },
+            "parentId": "ve8n2bq0l53bk67s",
+            "position": 0,
+            "handlers": {},
+            "visible": true
+        },
+        "ve8n2bq0l53bk67s": {
+            "id": "ve8n2bq0l53bk67s",
+            "type": "column",
+            "content": {
+                "width": "1"
+            },
+            "parentId": "d4a5e62c-c6fe-49c4-80d4-33862af8727d",
+            "position": 2,
+            "handlers": {},
+            "visible": true
+        },
+        "592kmgay0il91h2x": {
+            "id": "592kmgay0il91h2x",
+            "type": "dropdowninput",
+            "content": {
+                "label": "Select Atrtributes",
+                "options": "@{parameter_dict_localities}"
+            },
+            "parentId": "ve8n2bq0l53bk67s",
+            "position": 1,
+            "handlers": {
+                "ss-option-change": "handle_localities_column_choice"
+            },
+            "visible": true
+        },
+        "776tly2f9v0lzcr7": {
+            "id": "776tly2f9v0lzcr7",
+            "type": "plotlygraph",
+            "content": {
+                "spec": "@{plotly_bar_plot}"
+            },
+            "parentId": "ve8n2bq0l53bk67s",
+            "position": 2,
+            "handlers": {},
+            "visible": true
+        },
+        "hxugy9z8djvmi1o3": {
+            "id": "hxugy9z8djvmi1o3",
+            "type": "header",
+            "content": {
+                "text": "Header Text"
+            },
+            "parentId": "qf0j8kb30y5bkn06",
+            "position": 0,
+            "handlers": {},
+            "visible": true
+        },
+        "6zl9k9744qv2vy4w": {
+            "id": "6zl9k9744qv2vy4w",
+            "type": "section",
+            "content": {
+                "title": "Section Title",
+                "snapMode": "no"
+            },
+            "parentId": "qf0j8kb30y5bkn06",
+            "position": 1,
+            "handlers": {},
+            "visible": true
+        },
+        "3d9g8f0jd1dlt9el": {
+            "id": "3d9g8f0jd1dlt9el",
+            "type": "columns",
+            "content": {},
+            "parentId": "6zl9k9744qv2vy4w",
+            "position": 0,
+            "handlers": {},
+            "visible": true
+        },
+        "pxclzg6nwcscztlf": {
+            "id": "pxclzg6nwcscztlf",
+            "type": "column",
+            "content": {
+                "width": "1"
+            },
+            "parentId": "3d9g8f0jd1dlt9el",
+            "position": 0,
+            "handlers": {},
+            "visible": true
+        },
+        "nanox65ihx5eq2f3": {
+            "id": "nanox65ihx5eq2f3",
+            "type": "button",
+            "content": {
+                "text": "Go Back"
+            },
+            "parentId": "hxugy9z8djvmi1o3",
+            "position": 0,
+            "handlers": {
+                "ss-click": "$goToPage_Page 1"
+            },
+            "visible": true
+        },
+        "dzrn8s0rf86svxrq": {
+            "id": "dzrn8s0rf86svxrq",
+            "type": "dropdowninput",
+            "content": {
+                "label": "Input Label",
+                "options": "@{lice_columns}"
+            },
+            "parentId": "pxclzg6nwcscztlf",
+            "position": 0,
+            "handlers": {
+                "ss-option-change": "handle_lice_type"
+            },
+            "visible": true
+        },
+        "k2zbo10rx4nd8m1a": {
+            "id": "k2zbo10rx4nd8m1a",
+            "type": "column",
+            "content": {
+                "width": "1"
+            },
+            "parentId": "3d9g8f0jd1dlt9el",
+            "position": 1,
+            "handlers": {},
+            "visible": true
+        },
+        "saiika0o8z1p51kp": {
+            "id": "saiika0o8z1p51kp",
+            "type": "plotlygraph",
+            "content": {
+                "spec": "@{plotly_locality}"
+            },
+            "parentId": "pxclzg6nwcscztlf",
+            "position": 2,
+            "handlers": {},
+            "visible": true
+        },
+        "1f9a7jmu2s4gzg8k": {
+            "id": "1f9a7jmu2s4gzg8k",
+            "type": "plotlygraph",
+            "content": {
+                "spec": "@{plotly_weather}"
+            },
+            "parentId": "k2zbo10rx4nd8m1a",
+            "position": 1,
+            "handlers": {},
+            "visible": true
+        },
+        "9yr5du0uf68zwm57": {
+            "id": "9yr5du0uf68zwm57",
+            "type": "image",
+            "content": {
+                "src": "https://media.giphy.com/media/3ov9k9Ss9N3wO6FQ7C/giphy.gif",
+                "caption": "Threshold Crossed!"
+            },
+            "parentId": "pxclzg6nwcscztlf",
+            "position": 1,
+            "handlers": {},
+            "visible": "warning"
+        },
+        "emkcazd7xmnetezo": {
+            "id": "emkcazd7xmnetezo",
+            "type": "dropdowninput",
+            "content": {
+                "label": "Input Label",
+                "options": "@{weather_columns}"
+            },
+            "parentId": "k2zbo10rx4nd8m1a",
+            "position": 0,
+            "handlers": {
+                "ss-option-change": "handle_weather_column_choice"
+            },
+            "visible": true
+        },
+        "y1w2i979lnobjq7q": {
+            "id": "y1w2i979lnobjq7q",
+            "type": "page",
+            "content": {
+                "key": "Page 3"
+            },
+            "parentId": "root",
+            "position": 2,
+            "handlers": {},
+            "visible": true
+        },
+        "c0vn5yd3iw4wcfvf": {
+            "id": "c0vn5yd3iw4wcfvf",
+            "type": "header",
+            "content": {
+                "text": "Predictions"
+            },
+            "parentId": "y1w2i979lnobjq7q",
+            "position": 0,
+            "handlers": {},
+            "visible": true
+        },
+        "2qvmqlcfp35qb3mb": {
+            "id": "2qvmqlcfp35qb3mb",
+            "type": "section",
+            "content": {
+                "title": "Section Title",
+                "snapMode": "no"
+            },
+            "parentId": "y1w2i979lnobjq7q",
+            "position": 1,
+            "handlers": {},
+            "visible": true
+        },
+        "5s08c0yt1erbbb3k": {
+            "id": "5s08c0yt1erbbb3k",
+            "type": "columns",
+            "content": {},
+            "parentId": "2qvmqlcfp35qb3mb",
+            "position": 0,
+            "handlers": {},
+            "visible": true
+        },
+        "qi94wmeueq3rkd67": {
+            "id": "qi94wmeueq3rkd67",
+            "type": "column",
+            "content": {
+                "width": "1"
+            },
+            "parentId": "5s08c0yt1erbbb3k",
+            "position": 0,
+            "handlers": {},
+            "visible": true
+        },
+        "sbtgzc84wveu8xjz": {
+            "id": "sbtgzc84wveu8xjz",
+            "type": "button",
+            "content": {
+                "text": "ARIMAX"
+            },
+            "parentId": "qi94wmeueq3rkd67",
+            "position": 0,
+            "handlers": {
+                "ss-click": "arimax_model"
+            },
+            "visible": true
+        },
+        "7p2y4pmvlg77g1y9": {
+            "id": "7p2y4pmvlg77g1y9",
+            "type": "dataframe",
+            "content": {
+                "dataframe": "@{combined_df}"
+            },
+            "parentId": "y1w2i979lnobjq7q",
+            "position": 2,
+            "handlers": {},
+            "visible": true
+        },
+        "s33nt9655frf21pd": {
+            "id": "s33nt9655frf21pd",
+            "type": "button",
+            "content": {
+                "text": "Home"
+            },
+            "parentId": "c0vn5yd3iw4wcfvf",
+            "position": 1,
+            "handlers": {
+                "ss-click": "$goToPage_Page 1"
+            },
+            "visible": true
+        },
+        "e827zhkn9tul0vbu": {
+            "id": "e827zhkn9tul0vbu",
+            "type": "button",
+            "content": {
+                "text": "Go Back"
+            },
+            "parentId": "c0vn5yd3iw4wcfvf",
+            "position": 0,
+            "handlers": {
+                "ss-click": "$goToPage_Page 2"
+            },
+            "visible": true
+        }
+    }
+}
